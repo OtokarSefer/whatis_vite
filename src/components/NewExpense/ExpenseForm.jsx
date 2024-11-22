@@ -3,7 +3,7 @@ import './ExpenseForm.css'
 import Expenses from '../Expenses/Expenses.jsx';
 
 const ExpenseForm = (props) => {
-    const [userInput, setuserInput] = useState({
+    const [userInput, setUserInput] = useState({
         enteredTitle: '',
         enteredPrice: '',
         enteredDate: ''
@@ -11,7 +11,7 @@ const ExpenseForm = (props) => {
     console.log("1")
     const titleChangeHandler = (event) => {
         console.log("2")
-        setuserInput({
+        setUserInput({
             ...userInput,
             enteredTitle: event.target.value
         })
@@ -19,7 +19,7 @@ const ExpenseForm = (props) => {
 
     const priceChangeHandler = (event) => {
         console.log("3")
-        setuserInput({
+        setUserInput({
             ...userInput,
             enteredPrice: event.target.value
         })
@@ -27,25 +27,27 @@ const ExpenseForm = (props) => {
     
     const dateChangeHandler = (event) => {
         console.log("4")
-        setuserInput({
+        setUserInput({
             ...userInput,
             enteredDate: event.target.value
         })
     }
 
-    const SubmitHandler =(event) => {
+    const SubmitHandler = (event) => {
         event.preventDefault();
         console.log("5")
         const expenseData = {
-            title: enteredTitle,
-            amount: enteredPrice,
-            date: new Date(enteredDate)
+            title: userInput.enteredTitle,
+            amount: userInput.enteredPrice,
+            date: new Date(userInput.enteredDate)
         }
         props.onSaveExpenseData(expenseData);
         console.log("6")
-        setEnteredTitle('')
-        setEnteredPrice('')
-        setEnteredDate('')
+        setUserInput({
+            enteredTitle: '',
+            enteredPrice: '',
+            enteredDate: ''
+        });
     }
 
     return(
