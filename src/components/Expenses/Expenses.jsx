@@ -6,15 +6,15 @@ import ExpensesFilter from "./ExpensesFilter.jsx";
 
 const Expenses = (props) => {
     const [selectedYear, setSelectedYear] = useState('2023');
-
+    console.log("year data in Expenses.js", selectedYear);
     const filterChangeHandler = (selectedYear) => {
         setSelectedYear(selectedYear);
     };
 
     return( 
         <div>
-            <ExpensesFilter selected={selectedYear} onChangeFilter={filterChangeHandler} />
             <Card className="expense">
+            <ExpensesFilter selected={selectedYear} onChangeFilter={filterChangeHandler} />
                 {props.expenses
                     .filter(expense => expense.date.getFullYear().toString() === selectedYear)
                     .map(expense => (
