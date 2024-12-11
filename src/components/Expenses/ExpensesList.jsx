@@ -1,6 +1,5 @@
-// ExpensesList.js
 import './ExpensesList.css';
-import ExpenseItem from "./ExpenseItem"; // Ensure correct capitalization
+import ExpenseItem from "./ExpenseItem";
 
 const ExpenseList = (props) => {
     if (props.expenses.length === 0) {
