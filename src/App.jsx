@@ -7,42 +7,51 @@ const App = () => {
     {  
       date: new Date(2024, 10, 12),
       title: 'werid aah book',
-      price: 3000.99
+      price: 3000.99,
+      id: 1
     },
     {  
       date: new Date(2024, 10, 12),
       title: 'pre-shitted pants!',
-      price: 3.99
+      price: 3.99,
+      id: 2
     },
     {  
       date: new Date(2023, 10, 12),
       title: 'werid aah book',
-      price: 3000.99
+      price: 3000.99,
+      id: 3
     },
     {  
       date: new Date(2023, 10, 12),
       title: 'pre-shitted pants!',
-      price: 3.99
+      price: 3.99,
+      id: 4
     },
     {  
       date: new Date(2023, 10, 12),
       title: 'werid aah book',
-      price: 3000.99
+      price: 3000.99,
+      id: 5
     },
     {  
       date: new Date(2025, 10, 12),
       title: 'pre-shitted pants!',
-      price: 3.99
+      price: 3.99,
+      id: 6
     },
     {  
       date: new Date(2025, 10, 12),
       title: 'werid aah book',
-      price: 3000.99
+      price: 3000.99,
+      id: 7
     },
     {  
       date: new Date(2025, 10, 12),
       title: 'pre-shitted pants!',
-      price: 3.99
+      price: 3.99,
+      id: 8
+
     },
   ]
 

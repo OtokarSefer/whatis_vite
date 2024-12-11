@@ -1,21 +1,33 @@
+import React, { useState } from 'react';
 import ExpenseForm from "./ExpenseForm";
-import './NewExpense.css'
+import './NewExpense.css';
 
 const NewExpense = (props) => {
-    const saveExpenseDataHandeler = (enteredExpenseData) => {
+    const [isPressed, setIsPressed] = useState(false);
+    const saveExpenseDataHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
-            id: Math.random().toString()
+            id: Math.random().toString(),
         };
-        console.log(expenseData)
-        props.onAddExpense(enteredExpenseData);
-    }
+        console.log(expenseData);
+        props.onAddExpense(expenseData);
+    };
 
-    return(
+    ///tähtis nupp
+    const toggleFormHandler = () => {
+        setIsPressed(prevState => !prevState);
+    };
+
+    return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandeler}/>
+            {isPressed ? (
+                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} toggleFormHandler={toggleFormHandler}/>
+            ) : (
+                ///tähtis nupp
+                <button onClick={toggleFormHandler}>Add new expense</button>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default NewExpense;
